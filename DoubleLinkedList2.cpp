@@ -145,7 +145,7 @@ public:
 
         //Step 2: Repeat until currentNode == NULL
         cout << "\nRecords in ascending order of roll number are\n";
-        int 1 = 0;
+        int i = 0;
         while (currentNode != NULL)
         {
             cout << i + 1 << ". " << currentNode->noMhs << " " <<  endl;
@@ -256,6 +256,10 @@ int main()
         default:
             cout << "Invalid option\n";
         }
-    
-    
+        cout << "\nPress Enter to continue...";
+        cin.ignore();
+        cin.get();
+        cout << endl;
+        system("clear"); 
+} while (choice != '6');
 }
