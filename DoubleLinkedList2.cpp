@@ -9,3 +9,9 @@ public:
     Node *next;
     Node *prev;
 };
+
+class Doublelinkedlist
+{
+private:
+    Node *START;
+}
