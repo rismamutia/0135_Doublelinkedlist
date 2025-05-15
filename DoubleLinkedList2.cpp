@@ -7,5 +7,5 @@ class Node
 public:
     int noMhs;
     Node *next;
-    Node 
-}
+    Node *prev;
+};
