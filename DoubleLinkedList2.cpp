@@ -136,6 +136,31 @@ public:
     {
         if (START == NULL)
         {
+            cout <<  "\nList is empty" << endl;
+            return;
+        }
+
+        //step 1: Mark first node as currentNode
+        Node *currentNode = START;
+
+        //Step 2: Repeat until currentNode == NULL
+        cout << "\nRecords in ascending order of roll number are\n";
+        int 1 = 0;
+        while (currentNode != NULL)
+        {
+            cout << i + 1 << ". " << currentNode->noMhs << " " <<  endl;
+
+            //Step 3: Move to next node
+            currentNode = currentNode->next;
+            i++;
+        }
+    }
+    
+
+    void revtraverse()
+    {
+        if (START == NULL)
+        {
             cout << "\nList is empty" << endl;
             return;
         }
@@ -160,7 +185,7 @@ public:
             i--;
         }
     }
-
+    
     void searchData()
     {
        if (START == NULL)
@@ -172,6 +197,65 @@ public:
        int rollNo;
        cout << "\nEnter the roll number to search: ";
        cin >> rollNo;
-       
+
+       Node *current = START;
+
+       //Step 1: Traverse to find matching roll number
+       while (current != NULL && current->noMhs != rollNo)
+        current = current->next;
+
+        //step 2: output result
+        if (current == NULL)
+        {
+            cout << "Record not found\n";
+        }
+        else
+        {
+            cout << "Record found\n";
+            cout << "Roll Number: " << current->noMhs << endl;
+        }
     }
 };
+
+int main()
+{
+    Doublelinkedlist list;
+    char choice;
+
+    do
+    {
+        cout << "\nMenu\n";
+        cout << "1. Add Record\n";
+        cout << "2. Delete Record\n";
+        cout << "3. View Ascending\n";
+        cout << "4. View Descending\n";
+        cout << "5. Search Record\n";
+        cout << "6. Exit\n";
+        cout << "7. Enter your choice: ";
+
+        cin >> choice;
+
+        switch (choice)
+        {
+        case '1':
+            list.addNode();
+            break;
+        case '2':
+            list.hapus();
+            break;
+        case '3':
+            list.traverse();
+            break;
+        case '4':
+            list.revtraverse();
+        case '5':
+            list.searchData();
+            break;
+        case '6':
+            return 0;
+        default:
+            cout << "Invalid option\n";
+        }
+    
+    
+}
