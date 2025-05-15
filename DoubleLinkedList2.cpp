@@ -2,6 +2,9 @@
 #include <string>
 using namespace std;
 
+//Nama repository
+//4NIMBelakang_Doublelinkedlist
+
 class Node
 {
 public:
@@ -55,6 +58,7 @@ public:
             START= newNode;
             return;
         }
+        
         // Insert in between mode
         // Step 8: Locate position for insertion
         Node *current = START;
@@ -67,6 +71,7 @@ public:
             cout << "\nDuplicate roll numbers not allowed" << endl;
             return;
         }
+        
         // Step 9: Insert between current and current->next
         newNode->next = current->next; // Step 9a: newNode.next = current.next
         newNode->prev = current;       // Step 9b: newNode.prev = current
@@ -76,4 +81,25 @@ public:
         current->next->prev = newNode;  //Step 9c: current.next.prev = newNode
         current->next = newNode;  //Step 9d: current.next = newNode
     }
-}
+
+    void hapus()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        cout << "\nMasukkan NIM yang akan didelete";
+        int rollNo;
+        cin >> rollNo;
+        
+        Node *current = START;
+
+        // Step 1: Tranverse the list to find the node
+        while(current != NULL && current->noMhs !=rollNo)
+        {
+            
+        }
+    }
+};
